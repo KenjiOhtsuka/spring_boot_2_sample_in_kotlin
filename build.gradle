@@ -18,6 +18,11 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web'
     compile 'org.springframework.boot:spring-boot-starter-data-jpa'
     compile("org.postgresql:postgresql:42.1.4")
+
+    def kotlinx_html_version = "0.3.2"
+
+    // include for server side
+    compile "org.jetbrains.kotlinx:kotlinx-html-jvm:${kotlinx_html_version}"
     //testCompile("org.springframework.boot:spring-boot-starter-test")
 }
 

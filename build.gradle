@@ -1,9 +1,20 @@
+buildscript {
+    def kotlinVersion = '1.2.51'
+    dependencies {
+        classpath("org.jetbrains.kotlin:kotlin-allopen:$kotlinVersion")
+    }
+}
+
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.2.51'
     id 'org.springframework.boot' version '2.0.3.RELEASE'
 }
 
+// 関係するライブラリを一括設定する
 apply plugin: 'io.spring.dependency-management'
+
+//apply plugin: 'kotlin'
+apply plugin: 'kotlin-spring'
 
 group 'com.example'
 version '1.0-SNAPSHOT'
@@ -19,10 +30,11 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter-data-jpa'
     compile("org.postgresql:postgresql:42.1.4")
 
-    def kotlinx_html_version = "0.3.2"
+    def kotlinx_html_version = "0.6.11"
 
     // include for server side
     compile "org.jetbrains.kotlinx:kotlinx-html-jvm:${kotlinx_html_version}"
+    compile("org.jetbrains.kotlin:kotlin-reflect")
     //testCompile("org.springframework.boot:spring-boot-starter-test")
 }
 

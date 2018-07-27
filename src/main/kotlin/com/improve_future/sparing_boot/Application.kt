@@ -1,14 +1,14 @@
 package com.improve_future.sparing_boot
 
-import org.springframework.boot.SpringApplication
+import org.springframework.boot.Banner
 import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.runApplication
 
 @SpringBootApplication
-open class Application {
-    companion object {
-        @JvmStatic
-        fun main(args: Array<String>) {
-            SpringApplication.run(Application::class.java, *args)
-        }
+class Application
+
+fun main(args: Array<String>) {
+    runApplication<Application>(*args) {
+        setBannerMode(Banner.Mode.OFF)
     }
 }

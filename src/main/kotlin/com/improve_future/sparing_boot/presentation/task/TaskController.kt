@@ -12,9 +12,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes
 class TaskController(
     private val taskRepository: TaskRepository
 ) {
-//    @Autowired
-//    private lateinit var taskRepository: TaskRepository
-
     @ResponseBody
     @GetMapping
     fun list(modelMap: ModelMap): String {
